@@ -1,6 +1,6 @@
 {
   "name": "@bomberstudios/css-library",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A bunch of CSS code I reuse between projects",
   "main": "index.css",
   "scripts": {
