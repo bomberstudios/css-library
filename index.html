@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Library Demo</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+      body {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .chip {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius);
+      }
+
+      footer {
+        padding: 50px 0;
+        text-align: center;
+        color: var(--subtle);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Library Demo</h1>
+
+    <p>
+      This is a collection of utility classes and components that I use in my projects. It's a work in progress and I'll
+      keep adding more as I go.
+    </p>
+
+    <h2>Stacks</h2>
+
+    <h3>Vertical Stack</h3>
+    <vstack>
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </vstack>
+
+    <h3>Vertical Stack, align=center</h3>
+    <vstack align="center">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </vstack>
+
+    <h3>Vertical Stack, align=right</h3>
+    <vstack align="right">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </vstack>
+
+    <h3>Vertical Stack, with dividers</h3>
+    <vstack>
+      <div>Item 1</div>
+      <divider></divider>
+      <div>Item 2</div>
+      <divider></divider>
+      <div>Item 3</div>
+    </vstack>
+
+    <h3>Horizontal Stack</h3>
+    <hstack>
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Horizontal Stack, align=center</h3>
+    <hstack align="center">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Horizontal Stack, align=right</h3>
+    <hstack align="right">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Horizontal Stack, align=space-between</h3>
+    <hstack align="space-between">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Horizontal Stack, with dividers</h3>
+    <hstack>
+      <div>Item 1</div>
+      <divider></divider>
+      <div>Item 2</div>
+      <divider></divider>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Z Stack</h3>
+    <zstack>
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </zstack>
+
+    <h3>Nested Stacks</h3>
+    <vstack>
+      <hstack align="space-between">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </hstack>
+      <divider></divider>
+      <hstack align="center" style="align-items: start;">
+        <div>Item 4</div>
+        <divider></divider>
+        <vstack>
+          <div>Item A</div>
+          <divider></divider>
+          <div>Item B</div>
+          <divider></divider>
+          <div>Item C</div>
+        </vstack>
+        <divider></divider>
+        <div>Item 6</div>
+      </hstack>
+    </vstack>
+
+    <h2>Colors</h2>
+    <vstack>
+      <hstack align="left">
+        <p>--brand</p>
+        <div class="chip" style="background-color: var(--brand);"></div>
+      </hstack>
+      <hstack>
+        <p>--subtle</p>
+        <div class="chip" style="background-color: var(--subtle);"></div>
+      </hstack>
+    </vstack>
+
+    <h2>UI Elements</h2>
+    <h3>Button</h3>
+    <button>Click me</button>
+
+    <h2>Shadows</h2>
+    <vstack>
+      <hstack>
+        <p>--shadow-small, .shadow</p>
+        <div class="shadow chip"></div>
+      </hstack>
+      <hstack>
+        <p>--shadow-medium, .shadow-medium</p>
+        <div class="shadow-medium chip"></div>
+      </hstack>
+      <hstack>
+        <p>--shadow-large, .shadow-large</p>
+        <div class="shadow-large chip"></div>
+      </hstack>
+      <hstack>
+        <p>--shadow-center, .shadow-center</p>
+        <div class="shadow-center chip"></div>
+      </hstack>
+    </vstack>
+
+    <footer>
+      Enjoy life!
+    </footer>
+  </body>
+
+</html>

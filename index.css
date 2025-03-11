@@ -1,0 +1,157 @@
+:root {
+  /* Spacing */
+  --gap: 10px;
+  --radius-small: 3px;
+  --radius: 5px;
+  --radius-large: 10px;
+  --padding-small: 5px;
+  --padding-medium: 8px;
+  --padding: 10px;
+
+  /* Color theme */
+  color-scheme: light dark;
+  accent-color: var(--brand);
+  --brand: light-dark(#f60, #f60);
+  --subtle: light-dark(#aaa, #666);
+
+  /* Typography */
+  --font-family: system-ui, sans-serif;
+  --font-size: 1rem;
+  --line-height: 1.3;
+
+  /* Visual */
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 5px 10px rgba(0, 0, 0, 0.3);
+  --shadow-center: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+/* Layout */
+hstack,
+vstack {
+  display: flex;
+  gap: var(--gap);
+}
+
+hstack {
+  flex-direction: row;
+  align-items: center;
+}
+vstack {
+  flex-direction: column;
+}
+
+hstack[align="center"],
+vstack[align="center"] {
+  justify-content: center;
+}
+hstack[align="right"],
+vstack[align="right"] {
+  align-items: end;
+  justify-content: flex-end;
+}
+vstack[align="right"] > * {
+  width: 100%;
+}
+hstack[align="space-between"],
+vstack[align="space-between"] {
+  justify-content: space-between;
+}
+/* TODO: top and bottom alignment */
+hstack[align="top"] {
+  align-items: start;
+}
+
+zstack {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+zstack > * {
+  grid-area: 1/1/1/1;
+}
+
+divider {
+  background-color: var(--subtle);
+}
+
+vstack divider {
+  width: 100%;
+  height: 1px;
+}
+
+hstack divider {
+  width: 1px;
+  height: 100%;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+}
+body {
+  line-height: var(--line-height);
+}
+
+/* UI Elements */
+button,
+.button {
+  font-size: var(--font-size);
+  background-color: var(--brand);
+  color: white;
+  cursor: pointer;
+  padding: var(--padding-medium) var(--padding);
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  &:hover {
+    background-color: lch(from var(--brand) calc(l - 10) c h);
+  }
+  &:active {
+    background-color: lch(from var(--brand) calc(l - 20) c h);
+  }
+}
+
+/* Effects */
+.glass {
+  background-color: #6666;
+  backdrop-filter: blur(20px);
+}
+.shadow {
+  box-shadow: var(--shadow-small)
+}
+.shadow-medium {
+  box-shadow: var(--shadow-medium)
+}
+.shadow-large {
+  box-shadow: var(--shadow-large)
+}
+.shadow-center {
+  box-shadow: var(--shadow-center)
+}
