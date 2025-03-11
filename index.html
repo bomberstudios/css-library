@@ -54,6 +54,14 @@
         <span>--subtle</span>
         <div class="chip" style="background-color: var(--subtle)"></div>
       </hstack>
+      <hstack>
+        <span>--fg-color</span>
+        <div class="chip" style="background-color: var(--fg-color)"></div>
+      </hstack>
+      <hstack>
+        <span>--bg-color</span>
+        <div class="chip" style="background-color: var(--bg-color)"></div>
+      </hstack>
     </vstack>
 
     <h2>Stacks</h2>
@@ -126,30 +134,34 @@
     </hstack>
 
     <h3>Z Stack</h3>
-    <p>Great if you need to stack a bunch of elements on top of each other</p>
-    <zstack>
-      <div style="width: 150px; height: 150px; background-color: var(--brand)">
-        1
-      </div>
-      <div
-        style="
-          width: 100px;
-          height: 100px;
-          background-color: lch(from var(--brand) calc(l + 10) c h);
-        "
-      >
-        2
-      </div>
-      <div
-        style="
-          width: 50px;
-          height: 50px;
-          background-color: lch(from var(--brand) calc(l + 20) c h);
-        "
-      >
-        3
-      </div>
-    </zstack>
+    <vstack>
+      <p>Great if you need to stack a bunch of elements on top of each other</p>
+      <zstack>
+        <div
+          style="width: 150px; height: 150px; background-color: var(--brand)"
+        >
+          1
+        </div>
+        <div
+          style="
+            width: 100px;
+            height: 100px;
+            background-color: lch(from var(--brand) calc(l + 10) c h);
+          "
+        >
+          2
+        </div>
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            background-color: lch(from var(--brand) calc(l + 20) c h);
+          "
+        >
+          3
+        </div>
+      </zstack>
+    </vstack>
 
     <h3>Nested Stacks</h3>
     <vstack>
