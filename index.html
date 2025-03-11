@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Library Demo</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <style>
+      :root {
+        --brand: #3e8fe6;
+      }
+
       body {
         width: 50%;
         margin: 0 auto;
@@ -30,9 +33,28 @@
     <h1>CSS Library Demo</h1>
 
     <p>
-      This is a collection of utility classes and components that I use in my projects. It's a work in progress and I'll
-      keep adding more as I go.
+      This is a collection of utility classes and components that I use in my
+      projects. It's a work in progress and I'll keep adding more as I go. Feel
+      free to use it in your projects, and if you have any suggestions or
+      feedback, please
+      <a href="https://bsky.app">let me know</a>!
     </p>
+
+    <h2>Colors</h2>
+    <vstack>
+      <hstack align="left">
+        <p>--brand</p>
+        <div class="chip" style="background-color: var(--brand)"></div>
+      </hstack>
+      <p>
+        This is overridden in this HTML from the default value, which is
+        (unsurprisingly) a nice shadow of orange.
+      </p>
+      <hstack>
+        <p>--subtle</p>
+        <div class="chip" style="background-color: var(--subtle)"></div>
+      </hstack>
+    </vstack>
 
     <h2>Stacks</h2>
 
@@ -40,6 +62,15 @@
     <vstack>
       <div>Item 1</div>
       <div>Item 2</div>
+      <div>Item 3</div>
+    </vstack>
+
+    <h3>Vertical Stack, with dividers</h3>
+    <vstack>
+      <div>Item 1</div>
+      <divider></divider>
+      <div>Item 2</div>
+      <divider></divider>
       <div>Item 3</div>
     </vstack>
 
@@ -57,19 +88,19 @@
       <div>Item 3</div>
     </vstack>
 
-    <h3>Vertical Stack, with dividers</h3>
-    <vstack>
-      <div>Item 1</div>
-      <divider></divider>
-      <div>Item 2</div>
-      <divider></divider>
-      <div>Item 3</div>
-    </vstack>
-
     <h3>Horizontal Stack</h3>
     <hstack>
       <div>Item 1</div>
       <div>Item 2</div>
+      <div>Item 3</div>
+    </hstack>
+
+    <h3>Horizontal Stack, with dividers</h3>
+    <hstack>
+      <div>Item 1</div>
+      <divider>f</divider>
+      <div>Item 2</div>
+      <divider></divider>
       <div>Item 3</div>
     </hstack>
 
@@ -81,7 +112,7 @@
     </hstack>
 
     <h3>Horizontal Stack, align=right</h3>
-    <hstack align="right">
+    <hstack align=" right">
       <div>Item 1</div>
       <div>Item 2</div>
       <div>Item 3</div>
@@ -91,15 +122,6 @@
     <hstack align="space-between">
       <div>Item 1</div>
       <div>Item 2</div>
-      <div>Item 3</div>
-    </hstack>
-
-    <h3>Horizontal Stack, with dividers</h3>
-    <hstack>
-      <div>Item 1</div>
-      <divider></divider>
-      <div>Item 2</div>
-      <divider></divider>
       <div>Item 3</div>
     </hstack>
 
@@ -118,7 +140,7 @@
         <div>Item 3</div>
       </hstack>
       <divider></divider>
-      <hstack align="center" style="align-items: start;">
+      <hstack align="center" style="align-items: start">
         <div>Item 4</div>
         <divider></divider>
         <vstack>
@@ -133,21 +155,21 @@
       </hstack>
     </vstack>
 
-    <h2>Colors</h2>
-    <vstack>
-      <hstack align="left">
-        <p>--brand</p>
-        <div class="chip" style="background-color: var(--brand);"></div>
-      </hstack>
-      <hstack>
-        <p>--subtle</p>
-        <div class="chip" style="background-color: var(--subtle);"></div>
-      </hstack>
-    </vstack>
-
     <h2>UI Elements</h2>
     <h3>Button</h3>
     <button>Click me</button>
+
+    <h3>Card</h3>
+    <hstack class="cols-2">
+      <card>
+        <h3>Card Title</h3>
+        <p>Card content goes here</p>
+      </card>
+      <card>
+        <h3>Card Title</h3>
+        <p>Card content goes here</p>
+      </card>
+    </hstack>
 
     <h2>Shadows</h2>
     <vstack>
@@ -169,9 +191,6 @@
       </hstack>
     </vstack>
 
-    <footer>
-      Enjoy life!
-    </footer>
+    <footer>Enjoy life!</footer>
   </body>
-
 </html>
