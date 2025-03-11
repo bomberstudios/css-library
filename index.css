@@ -1,12 +1,12 @@
 :root {
   /* Spacing */
-  --gap: 10px;
+  --gap: 12px;
   --radius-small: 3px;
   --radius: 5px;
   --radius-large: 10px;
-  --padding-small: 5px;
-  --padding-medium: 8px;
-  --padding: 10px;
+  --padding-small: calc(var(--gap) / 2);
+  --padding: var(--gap);
+  --padding-large: calc(var(--gap) * 1.5);
 
   /* Color theme */
   color-scheme: light dark;
@@ -21,9 +21,9 @@
 
   /* Visual */
   --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 2px 5px rgba(0, 0, 0, 0.3);
-  --shadow-large: 0 5px 10px rgba(0, 0, 0, 0.3);
-  --shadow-center: 0 0 10px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 2px calc(var(--gap) / 2) rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 5px var(--gap) rgba(0, 0, 0, 0.3);
+  --shadow-center: 0 0 var(--gap) rgba(0, 0, 0, 0.3);
 }
 
 /* Reset */
@@ -119,6 +119,18 @@ h6 {
 body {
   line-height: var(--line-height);
 }
+a {
+  color: var(--brand);
+  text-decoration: dotted underline;
+  text-decoration-skip-ink: true;
+  text-underline-offset: 3px;
+  transition: all 0.2s;
+  &:hover {
+    text-decoration: wavy underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+  }
+}
 
 /* UI Elements */
 button,
@@ -127,7 +139,7 @@ button,
   background-color: var(--brand);
   color: white;
   cursor: pointer;
-  padding: var(--padding-medium) var(--padding);
+  padding: var(--padding) var(--padding-large);
   border-radius: var(--radius);
   transition: all 0.2s;
   &:hover {
@@ -138,20 +150,40 @@ button,
   }
 }
 
+card {
+  background-color: white;
+  border: 1px solid var(--subtle);
+  border-radius: var(--radius);
+  padding: var(--padding-large);
+  box-shadow: var(--shadow-medium);
+  transition: all 0.2s;
+  &:hover {
+    box-shadow: var(--shadow-large);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
 /* Effects */
 .glass {
   background-color: #6666;
   backdrop-filter: blur(20px);
 }
 .shadow {
-  box-shadow: var(--shadow-small)
+  box-shadow: var(--shadow-small);
 }
 .shadow-medium {
-  box-shadow: var(--shadow-medium)
+  box-shadow: var(--shadow-medium);
 }
 .shadow-large {
-  box-shadow: var(--shadow-large)
+  box-shadow: var(--shadow-large);
 }
 .shadow-center {
-  box-shadow: var(--shadow-center)
+  box-shadow: var(--shadow-center);
 }
