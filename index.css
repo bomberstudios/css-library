@@ -36,6 +36,7 @@
   outline: none;
   border: none;
   text-decoration: none;
+  height: max-content;
 }
 
 html,
@@ -46,6 +47,8 @@ body {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Layout */
@@ -63,26 +66,23 @@ vstack {
   flex-direction: column;
 }
 
-hstack[align="center"],
-vstack[align="center"] {
+hstack[align='center'],
+vstack[align='center'] {
   justify-content: center;
 }
-hstack[align="right"],
-vstack[align="right"] {
+hstack[align='right'],
+vstack[align='right'] {
   align-items: end;
   justify-content: flex-end;
 }
-vstack[align="right"] > * {
+vstack[align='right'] > * {
   width: 100%;
 }
-hstack[align="space-between"],
-vstack[align="space-between"] {
+hstack[align='space-between'],
+vstack[align='space-between'] {
   justify-content: space-between;
 }
 /* TODO: top and bottom alignment */
-hstack[align="top"] {
-  align-items: start;
-}
 
 zstack {
   display: grid;
@@ -90,6 +90,9 @@ zstack {
   justify-items: center;
 }
 zstack > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: 1/1/1/1;
 }
 
@@ -107,6 +110,20 @@ hstack divider {
   height: 100%;
 }
 
+/* Grid */
+.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cols-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.cols-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 /* Typography */
 h1,
 h2,
@@ -114,7 +131,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1em 0;
+  margin: 1em 0 0.5em 0;
 }
 body {
   line-height: var(--line-height);
@@ -131,6 +148,9 @@ a {
     text-decoration-thickness: 1px;
   }
 }
+p {
+  margin: 0 0 1em 0;
+}
 
 /* UI Elements */
 button,
@@ -142,6 +162,10 @@ button,
   padding: var(--padding) var(--padding-large);
   border-radius: var(--radius);
   transition: all 0.2s;
+  &.fit {
+    width: fit-content;
+  }
+
   &:hover {
     background-color: lch(from var(--brand) calc(l - 10) c h);
   }

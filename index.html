@@ -43,7 +43,7 @@
     <h2>Colors</h2>
     <vstack>
       <hstack align="left">
-        <p>--brand</p>
+        <span>--brand</span>
         <div class="chip" style="background-color: var(--brand)"></div>
       </hstack>
       <p>
@@ -51,7 +51,7 @@
         (unsurprisingly) a nice shadow of orange.
       </p>
       <hstack>
-        <p>--subtle</p>
+        <span>--subtle</span>
         <div class="chip" style="background-color: var(--subtle)"></div>
       </hstack>
     </vstack>
@@ -98,7 +98,7 @@
     <h3>Horizontal Stack, with dividers</h3>
     <hstack>
       <div>Item 1</div>
-      <divider>f</divider>
+      <divider></divider>
       <div>Item 2</div>
       <divider></divider>
       <div>Item 3</div>
@@ -126,10 +126,29 @@
     </hstack>
 
     <h3>Z Stack</h3>
+    <p>Great if you need to stack a bunch of elements on top of each other</p>
     <zstack>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
+      <div style="width: 150px; height: 150px; background-color: var(--brand)">
+        1
+      </div>
+      <div
+        style="
+          width: 100px;
+          height: 100px;
+          background-color: lch(from var(--brand) calc(l + 10) c h);
+        "
+      >
+        2
+      </div>
+      <div
+        style="
+          width: 50px;
+          height: 50px;
+          background-color: lch(from var(--brand) calc(l + 20) c h);
+        "
+      >
+        3
+      </div>
     </zstack>
 
     <h3>Nested Stacks</h3>
@@ -157,7 +176,12 @@
 
     <h2>UI Elements</h2>
     <h3>Button</h3>
-    <button>Click me</button>
+    <vstack>
+      <span>Default button:</span>
+      <button>Click me</button>
+      <span>With '.fit' class:</span>
+      <button class="fit">Click me</button>
+    </vstack>
 
     <h3>Card</h3>
     <hstack class="cols-2">
@@ -173,20 +197,20 @@
 
     <h2>Shadows</h2>
     <vstack>
-      <hstack>
-        <p>--shadow-small, .shadow</p>
+      <hstack class="cols-2">
+        <span>--shadow-small, .shadow</span>
         <div class="shadow chip"></div>
       </hstack>
-      <hstack>
-        <p>--shadow-medium, .shadow-medium</p>
+      <hstack class="cols-2">
+        <span>--shadow-medium, .shadow-medium</span>
         <div class="shadow-medium chip"></div>
       </hstack>
-      <hstack>
-        <p>--shadow-large, .shadow-large</p>
+      <hstack class="cols-2">
+        <span>--shadow-large, .shadow-large</span>
         <div class="shadow-large chip"></div>
       </hstack>
-      <hstack>
-        <p>--shadow-center, .shadow-center</p>
+      <hstack class="cols-2">
+        <span>--shadow-center, .shadow-center</span>
         <div class="shadow-center chip"></div>
       </hstack>
     </vstack>
