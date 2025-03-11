@@ -4,6 +4,7 @@
   "description": "A bunch of CSS code I reuse between projects",
   "main": "index.css",
   "scripts": {
+    "start": "npx reload -b",
     "release": "npm publish --access public"
   },
   "author": "Ale Muñoz",
